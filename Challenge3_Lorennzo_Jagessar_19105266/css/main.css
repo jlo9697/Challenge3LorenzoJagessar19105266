@@ -1,0 +1,237 @@
+/*GENERAL*/
+@font-face {
+    font-family: lexend;
+    src: url(../fonts/Lexend/Lexend-Regular.ttf);
+}
+
+@font-face {
+    font-family: monteserrat;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: lexendBold;
+    src: url(../fonts/Lexend/Lexend-Medium.ttf);
+}
+
+*{
+    font-family: lexend;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+/*BACKGROUND*/
+body{
+    background-image: url(../pictures/nasa_earth_wallpaper_giant.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+/*-------------------------*/
+
+/*LOGO*/
+.whitelogo{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*-------------------------*/
+
+/*HEADER*/
+header{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/*-------------------------*/
+
+/*KOLOMMEN*/
+.location,.other,.weather{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    font-family: lexendBold;
+}
+/*-------------------------*/
+
+/*GRID BENAMING*/
+.headerlogo{
+    grid-area: header;
+}
+
+.location{
+    grid-area: loc;
+}
+
+.weather{
+    grid-area: weer;
+}
+
+.other{
+    grid-area: other;
+}
+/*-------------------------*/
+
+
+/*MAPBOX API*/
+#map{
+    width: 90%;
+    height: 400px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    outline: none;
+}
+/*-------------------------*/
+
+/*OPENWEATHER API*/
+input, label{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#weatherstatus{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+label{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#place{
+    margin-top: 5px;
+    border-radius: 100px;
+    border: rgba(255, 255, 255, 0.8);
+    width: 60%;
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+}
+
+#weatherupdate{
+    margin-top: 10px;
+    border-radius: 100px;
+    border: rgba(255, 255, 255, 0.8);
+    width: 60%;
+    height: 50px;
+    font-weight: bold;
+    outline: none;
+}
+
+#weatherupdate:hover{
+    background-color: #293133;
+    color: white;
+    transition: ease-in-out 1s;
+    cursor: pointer;
+}
+/*-------------------------*/
+
+/*ANIMEQUOTE API*/
+#quote, #character, #anime{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+#quote{
+    font-style: italic;
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    border: rgba(255, 255, 255, 0.8);
+    width: 40%;
+    height: 50px;
+    font-weight: bold;
+    outline: none;
+}
+
+button:hover{
+    background-color: #293133;
+    color: white;
+    transition: ease-in-out 1s;
+    cursor: pointer;
+}
+/*-------------------------*/
+
+/*MOBILE VIEW*/
+@media only screen and (min-width: 0px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 0.7fr 0.8fr;
+        grid-template-areas: 
+            "header"
+            "loc"
+            "weer"
+            "other"
+        ;
+    }
+    .whitelogo{
+        width: 70%;
+    }
+}
+
+/*TABLET VIEW*/
+@media only screen and (min-width: 768px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 0.9fr 0.9fr 1fr;
+        grid-template-rows: 0.2fr 1fr 0.5fr;
+        grid-template-areas:
+            "header header header header"
+            "loc loc loc loc"
+            "weer weer other other"
+        ;
+    }
+    .other,.weather{
+        width: 60%;
+    }
+    .whitelogo{
+        width: 60%;
+    }
+}
+
+/*DESKTOP VIEW*/
+@media only screen and (min-width: 1024px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.4fr 1fr;
+        grid-template-areas:
+            "header header header header header header"
+            "loc loc weer weer other other"
+        ;
+    }
+    .other,.weather, .location{
+        width: 80%;
+        height: 100%;
+    }
+    .whitelogo{
+        width: 60%;
+    }
+}
+

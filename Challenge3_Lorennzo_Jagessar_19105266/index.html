@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+        <script src="js/main.js" defer></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+        <title>Return Dashboard</title>
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="container">
+            <div class="headerlogo">
+                <header>
+                    <img class="whitelogo" src="pictures/spaceX_Logo_White.png" alt="">
+                </header>
+            </div>
+            <div class="location">
+                <h1>Location</h1>
+                <h2>Look for places to land</h2>
+                <div id="map"></div>
+            </div>
+            <div class="weather">
+                <h1>Weather</h1>
+                <h2>How's the weather?</h2>
+                <div id="weatherstatus"></div>
+                <label for="place">City name</label>
+                <input type="text" name="place" id="place" placeholder="type the city name here">
+                <input type="button" id="weatherupdate" value="Show me the weather" onclick="weatherapi()">
+            </div>
+            <div class="other">
+                <h1>Quote</h1>
+                <h2>Some inspirational quotes</h2>
+                <div id="quote"></div>
+                <div id="character"></div>
+                <div id="anime"></div>
+                <button onclick="quoteapi()">Get another quote</button>
+            </div>
+        </div>   
+    </body>
+</html>
